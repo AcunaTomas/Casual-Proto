@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class TestSwipeDetect : MonoBehaviour
 {
-
+    public Boats boats;
     [SerializeField]
     private float mindistance = .2f;
     [SerializeField]
@@ -47,7 +47,7 @@ public class TestSwipeDetect : MonoBehaviour
     {
         if (Vector2.Distance(initalposition, endposition) >= mindistance && (endtime - starttime) <= maxtime)
         {
-            Debug.Log("xd");
+
             Vector2 direction = endposition - initalposition;
             Vector2 dir = new Vector2(direction.x, direction.y).normalized;
             swipeDirection(dir);
@@ -59,19 +59,19 @@ public class TestSwipeDetect : MonoBehaviour
     {
         if (Vector2.Dot(Vector2.up, dir) > dirThreshold)
         {
-            Debug.Log("Up");
+            boats.MoveBoats("Up");
         }
         else if (Vector2.Dot(Vector2.down, dir) > dirThreshold)
         {
-            Debug.Log("Down");
+            boats.MoveBoats("Down");
         }
         else if (Vector2.Dot(Vector2.left, dir) > dirThreshold)
         {
-            Debug.Log("Left");
+            boats.MoveBoats("Left");
         }
         else if (Vector2.Dot(Vector2.right, dir) > dirThreshold)
         {
-            Debug.Log("Right");
+            boats.MoveBoats("Right");
         }
     }
 }
