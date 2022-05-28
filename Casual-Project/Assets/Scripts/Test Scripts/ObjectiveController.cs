@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ObjectiveController : MonoBehaviour
+public class ObjectiveController : MonoBehaviour //TODO: Unused, Reemplazo del gameManager para testing
 {
     private Transform trs;
 

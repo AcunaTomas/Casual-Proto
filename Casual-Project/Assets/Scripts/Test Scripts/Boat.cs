@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Boat : MonoBehaviour
 {
-    // Start is called before the first frame update
     private Transform childtrs;
     private float dir = 0f;
     private float dirvert = 0f;
@@ -13,10 +12,12 @@ public class Boat : MonoBehaviour
         childtrs = GetComponent<Transform>();
     }
 
-    private void Update()
+    private void Update() //Mueve el bote a la dirección especificada
     {
         childtrs.Translate(dir * Time.deltaTime, dirvert * Time.deltaTime, 0f * Time.deltaTime, Space.World);
     }
+
+    //Funciones de control de movimiento, Puede que sea necesario rehacerlas
     private void MoveLateral(float direct)
     {
         dir = direct;

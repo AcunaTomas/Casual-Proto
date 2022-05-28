@@ -1,15 +1,16 @@
 using System.Collections;
 using UnityEngine;
 
-public class TestSwipeDetect : MonoBehaviour
+public class TestSwipeDetect : MonoBehaviour //Codigo de detección de Swipes
 {
+    //Valores configurables para la detección de swipes, valores de tolerancia, rango y tiempo de swipes
     public Boats boats;
     [SerializeField]
     private float mindistance = .2f;
     [SerializeField]
     private float maxtime = 1f;
-    [SerializeField, Range(0f, 1f)]
-    private float dirThreshold = .9f;
+    [SerializeField, Range(0f, 1f)]  
+    private float dirThreshold = .9f; 
 
 
     public InputManagerTest inputManager;
@@ -18,6 +19,7 @@ public class TestSwipeDetect : MonoBehaviour
     private Vector2 endposition;
     private float endtime;
 
+  
     private void OnEnable()
     {
         inputManager.OnStartTouch += swipeStart;
@@ -29,7 +31,7 @@ public class TestSwipeDetect : MonoBehaviour
         inputManager.OnEndTouch -= swipeEnd;
     }
 
-
+    //Eventos usados para calcular si fue un swipe o no
     private void swipeStart(Vector2 position, float time)
     {
         initalposition = position;
@@ -43,6 +45,7 @@ public class TestSwipeDetect : MonoBehaviour
         detect();
     }
     
+    //Detectar swipe
     private void detect()
     {
         if (Vector2.Distance(initalposition, endposition) >= mindistance && (endtime - starttime) <= maxtime)
@@ -55,6 +58,7 @@ public class TestSwipeDetect : MonoBehaviour
 
     }
 
+    //Detección de la dirección del swipe
     private void swipeDirection(Vector2 dir)
     {
         if (Vector2.Dot(Vector2.up, dir) > dirThreshold)

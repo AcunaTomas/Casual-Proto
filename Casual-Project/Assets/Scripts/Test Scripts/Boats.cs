@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boats : MonoBehaviour
+public class Boats : MonoBehaviour //Control de los botes, toma el swipe y mueve los barcos a esa dirección.
 {
     private Transform trs;
 

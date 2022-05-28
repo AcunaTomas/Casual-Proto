@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     private Button button;
 
 
-    public void StartGame()
+    public void StartGame() //Posiblemente la mejor parte de código que haya escrito, me llevo horas usar una built-in function
     {
         SceneManager.LoadScene(1);
     }
