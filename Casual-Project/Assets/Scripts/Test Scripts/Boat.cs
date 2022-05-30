@@ -17,6 +17,14 @@ public class Boat : MonoBehaviour
         childtrs.Translate(dir * Time.deltaTime, dirvert * Time.deltaTime, 0f * Time.deltaTime, Space.World);
     }
 
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        StopMoving();
+    }
+
+
+
     //Funciones de control de movimiento, Puede que sea necesario rehacerlas
     private void MoveLateral(float direct)
     {
@@ -32,5 +40,7 @@ public class Boat : MonoBehaviour
     private void StopMoving()
     {
         dir = 0;
+        dirvert = 0;
+
     }
 }

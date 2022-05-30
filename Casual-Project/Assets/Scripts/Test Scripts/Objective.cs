@@ -15,7 +15,10 @@ public class Objective : MonoBehaviour
     private void OnTriggerEnter(Collider other) //TODO: Placeholder, esto tiene que fijarse si el bote correcto lo tocó.
     {
         Debug.Log("yes");
+        if (other.name == boat.name)
+        {
+            Coll.SendMessageUpwards("EndGame");
+        }
 
-        Coll.SendMessageUpwards("EndGame");
     }
 }
