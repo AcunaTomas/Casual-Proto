@@ -23,6 +23,10 @@ public class Objective : MonoBehaviour
             boat.stopinput();
             Coll.SendMessageUpwards("UpdateArrivals"); //avisa al manager que llego el bote correcto
         }
+        else
+        {
+            Coll.SendMessageUpwards("LoseGame");
+        }
 
     }
 

@@ -19,6 +19,11 @@ public class ObjectiveController : MonoBehaviour //Reemplazo del gameManager par
         SceneManager.LoadScene("Testing Scene");
     }
 
+    private void LoseGame() //Termina el nivel y lo reinicia
+    {
+        Debug.Log("LOSE");
+        SceneManager.LoadScene("Testing Scene");
+    }
     private void Update()
     {
         if (boatsarrived >= trs.childCount)
