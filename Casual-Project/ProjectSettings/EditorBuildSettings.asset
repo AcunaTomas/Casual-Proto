@@ -14,6 +14,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndingScene.unity
     guid: f3c1e86b6a970ae48bc4c2f5508b043b
+  - enabled: 1
+    path: Assets/Scenes/Lvl1.unity
+    guid: b6f7e302127bd5c4485955c15e0f5e97
+  - enabled: 1
+    path: Assets/Scenes/Lvl2.unity
+    guid: d6ea53d6d596c4f40a0ca90ac32279bc
+  - enabled: 1
+    path: Assets/Scenes/Lvl3.unity
+    guid: 59cd24d7abc1c494db9b1136a2132963
+  - enabled: 1
+    path: Assets/Scenes/Testing Scene 1.unity
+    guid: 25482ffc09f17704c8940c43d0daefaf
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: dc72caf690ab22b41a9a343d15574ae0, type: 2}
