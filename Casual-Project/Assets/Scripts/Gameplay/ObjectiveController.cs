@@ -7,22 +7,25 @@ public class ObjectiveController : MonoBehaviour //Reemplazo del gameManager par
 {
     private Transform trs;
     private int boatsarrived = 0;
+    public EndScreen endScreen;
 
     private void Start()
     {
+        Time.timeScale = 1f;
         trs = GetComponent<Transform>();
     }
 
     private void EndGame() //Termina el nivel y avanza al siguiente nivel
     {
         Debug.Log("WIN");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        endScreen.showEndScreen("Nivel Superado!", 1);
     }
 
     private void LoseGame() //Termina el nivel y lo reinicia
     {
         Debug.Log("LOSE");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        endScreen.showEndScreen("No Te Rindas!", 0);
+
     }
     private void Update()
     {
@@ -37,5 +40,6 @@ public class ObjectiveController : MonoBehaviour //Reemplazo del gameManager par
         boatsarrived += 1;
     }
 
+    
 }
 

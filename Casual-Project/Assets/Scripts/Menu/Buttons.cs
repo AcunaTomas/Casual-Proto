@@ -10,9 +10,9 @@ public class Buttons : MonoBehaviour
     private Button button;
 
 
-    public void StartGame() //Posiblemente la mejor parte de código que haya escrito, me llevo horas usar una built-in function
+    public void StartGame() //Posiblemente la mejor parte de cï¿½digo que haya escrito, me llevo horas usar una built-in function
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Lvl1");
     }
 
 
