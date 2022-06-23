@@ -18,13 +18,13 @@ public class ObjectiveController : MonoBehaviour //Reemplazo del gameManager par
     private void EndGame() //Termina el nivel y avanza al siguiente nivel
     {
         Debug.Log("WIN");
-        endScreen.showEndScreen("Nivel Superado!", 1);
+        endScreen.showEndScreen("¡Nivel Superado!", 1);
     }
 
     private void LoseGame() //Termina el nivel y lo reinicia
     {
         Debug.Log("LOSE");
-        endScreen.showEndScreen("No Te Rindas!", 0);
+        endScreen.showEndScreen("¡No Te Rindas!", 0);
 
     }
     private void Update()
