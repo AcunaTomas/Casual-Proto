@@ -1,12 +1,12 @@
 using System.Collections;
 using UnityEngine;
 
-public class TestSwipeDetect : MonoBehaviour //Codigo de detección de Swipes
+public class TestSwipeDetect : MonoBehaviour //Codigo de detecciï¿½n de Swipes
 {
-    //Valores configurables para la detección de swipes, valores de tolerancia, rango y tiempo de swipes
+    //Valores configurables para la detecciï¿½n de swipes, valores de tolerancia, rango y tiempo de swipes
     public Boats boats;
     [SerializeField]
-    private float mindistance = .2f;
+    private float mindistance = .1f;
     [SerializeField]
     private float maxtime = 1f;
     [SerializeField, Range(0f, 1f)]  
@@ -58,7 +58,7 @@ public class TestSwipeDetect : MonoBehaviour //Codigo de detección de Swipes
 
     }
 
-    //Detección de la dirección del swipe
+    //Detecciï¿½n de la direcciï¿½n del swipe
     private void swipeDirection(Vector2 dir)
     {
         if (Vector2.Dot(Vector2.up, dir) > dirThreshold)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Objective : MonoBehaviour
-{   //TODO Implementar Relaciones Editables entre bote y objetivo
+{   
     public Boat boat;
     private Transform Coll;
 
@@ -22,6 +22,7 @@ public class Objective : MonoBehaviour
         {
             boat.stopinput();
             Coll.SendMessageUpwards("UpdateArrivals"); //avisa al manager que llego el bote correcto
+            other.transform.position = Coll.position;
         }
         else
         {

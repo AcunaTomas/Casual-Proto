@@ -6,15 +6,19 @@ using UnityEngine;
 public class Boat : MonoBehaviour
 {
     private Transform childtrs;
+    private Rigidbody rigid;
+    public EndScreen end;
     private float dir = 0f;
     private float dirvert = 0f;
     private bool canmove = true;
+    
     private void Start()
     {
         childtrs = GetComponent<Transform>();
+        rigid = GetComponent<Rigidbody>();
     }
 
-    private void Update() //Mueve el bote a la direcci�n especificada
+    private void FixedUpdate() //Mueve el bote a la direcci�n especificada
     {
         if (canmove)
         {
@@ -27,29 +31,49 @@ public class Boat : MonoBehaviour
     {
         if (collision.transform.parent.GetComponent<Transform>().name == "Boats")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            end.showEndScreen("¡No Te Rindas!", 0);
         }
         StopMoving();
     }
 
 
 
+
     //Funciones de control de movimiento, Puede que sea necesario rehacerlas
     private void MoveLateral(float direct)
     {
-        dir = direct;
-        dirvert = 0f;
+        if (canmove)
+        {
+            dir = direct + (0.75f * direct);
+            dirvert = 0f;
+            childtrs.eulerAngles = new Vector3(
+                -90 + (90 * (direct / 5)),
+                90,
+                -90 
+            );
+        }
+
     }
 
     private void MoveVertical(float direct)
     {
-        dirvert = direct;
-        dir = 0f;
+        if (canmove)
+        {
+            dirvert = direct + (0.75f * direct);
+            dir = 0f;
+            childtrs.eulerAngles = new Vector3(
+                270,
+                90,
+                -90
+            );
+        }
+
     }
     private void StopMoving()
     {
         dir = 0;
         dirvert = 0;
+
 
     }
     public void stopinput()
